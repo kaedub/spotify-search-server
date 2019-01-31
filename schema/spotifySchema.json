@@ -4,11 +4,6 @@
     "$id": "http://example.com/root.json",
     "type": "object",
     "title": "The Root Schema",
-    "required": [
-      "artist",
-      "album",
-      "track"
-    ],
     "properties": {
       "artist": {
         "$id": "#/properties/artist",
