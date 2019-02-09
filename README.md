@@ -33,4 +33,4 @@ I would implement a caching feature that would cache recent queries for a short 
 
 More importantly I would fix an authorization bug that is in this program. It is an easy fix but a major security concern that would need to be addressed before deployment. Due to the way I am using the `SpotifyWebApi` instance, it does not properly authenticate users on the `/search` endpoint. Currently, the API will get an access token and set it globally on the instance. This means unauthorized users can make requests the `/search` endpoint. This is a major security hole but can be fixed easily by sending the user's access token with each request instead of using the `setAccessToken` method on the `SpotifyWebApi` instance.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+__More is coming...__
