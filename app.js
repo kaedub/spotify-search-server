@@ -22,8 +22,8 @@ app.use(express.json());
 app.use(cors());
 app.use(authRouter);
 
-/*************** */
-/**    Search Routes    */
+/********************** */
+/**    Search Route    */
 
 app.get('/search', async function (req, res, next) {
   try {

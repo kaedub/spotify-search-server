@@ -3,7 +3,7 @@ const router = new express.Router();
 
 const { spotifyApi } = require('./spotifyAPI');
 
-const { REACT_CLIENT_URI } = require('./config.js');
+const { CLIENT_URI } = require('./config.js');
 
 /** SPOTIFY AUTH 
  *  
@@ -31,9 +31,9 @@ router.get('/authorize', async function (req, res, next) {
 
     let authData = await spotifyApi.authorizationCodeGrant(code);
 
-    // Set the access token on the API object to use it in later calls
-    // spotifyApi.setAccessToken(data.body['access_token']);
-    // spotifyApi.setRefreshToken(data.body['refresh_token']);
+    // Set the access token on the API object
+    spotifyApi.setAccessToken(authData.body['access_token']);
+    spotifyApi.setRefreshToken(authData.body['refresh_token']);
 
     // Build query string
     let query = ''
@@ -43,7 +43,7 @@ router.get('/authorize', async function (req, res, next) {
     
 
     /** Not really sure what to do here */
-    return res.redirect(`${REACT_CLIENT_URI}?${query}`)
+    return res.redirect(`${CLIENT_URI}?${query}`)
   } catch (error) {
     return next(error);
   }

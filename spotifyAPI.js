@@ -29,6 +29,9 @@ function cleanSearchResults(results, fields=['artists','albums','tracks']) {
 
     data[field] = results.body[field].items.map((item)=> {
 
+      if (field == 'albums')
+        console.log(item)
+
       let itemData = {  
         id: item.id,
         name: item.name, 
@@ -53,6 +56,8 @@ function cleanSearchResults(results, fields=['artists','albums','tracks']) {
           image: item.images[0],
         }
       }
+
+
 
       return itemData;
     });

@@ -5,19 +5,21 @@ This is the server application for a Spotify search application. This API handle
 ## To run the program
 In the project directory,
 
-Install dependencies
+### Install dependencies
 
-#### `npm install`
+`npm install`
 
+### Enable development mode to see morgan logs
+`export NODE_ENV=development`
 
-You may enable development mode to see morgan logs
-#### `export NODE_ENV=development"
-
-Run the application in development mode
-
-#### `node server.js`
+### Run the application
+`node server.js`
 
 This will run the application at [http://localhost:5000](http://localhost:5000/)
+
+### Set Client URI
+`export CLIENT_URI=http://localhost:3000`
+
 
 ## Project Details
 
